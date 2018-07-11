@@ -44,6 +44,7 @@ setup(
         'z3c.jbot',
         'plone.app.theming',
         'plone.app.themingplugins',
+        'beautifulsoup4'
     ],
     extras_require={
         'test': [

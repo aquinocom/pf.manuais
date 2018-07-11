@@ -1,102 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rules xmlns="http://namespaces.plone.org/diazo"
-       xmlns:css="http://namespaces.plone.org/diazo/css"
-       xmlns:xhtml="http://www.w3.org/1999/xhtml"
-       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-       xmlns:xi="http://www.w3.org/2001/XInclude">
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-  <theme href="index.html" />
-  <notheme css:if-not-content="#visual-portal-wrapper" />
+    <!-- Note:
 
-  <rules css:if-content="#portal-top">
-    <!-- Attributes -->
-    <copy attributes="*" css:theme="html" css:content="html" />
-    <!-- Base tag -->
-    <before css:theme="title" css:content="base" />
-    <!-- Title -->
-    <replace css:theme="title" css:content="title" />
-    <!-- Pull in Plone Meta -->
-    <after css:theme-children="head" css:content="head meta" />
-    <!-- Don't use Plone icons, use the theme's -->
-    <drop css:content="head link[rel='apple-touch-icon']" />
-    <drop css:content="head link[rel='shortcut icon']" />
-    <!-- drop the theme stylesheets -->
-    <drop theme="/html/head/link[rel='stylesheet']" />
-    <!-- CSS -->
-    <after css:theme-children="head" css:content="head link" />
-    <!-- Script -->
-    <after css:theme-children="head" css:content="head script" />
-  </rules>
+        This is an example theme only. It is reasonably complete, but not
+        perfect, and not tested in all browsers. It is intended only to show
+        how a reasonably complete theme can be constructed.
 
-  <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
-  <copy attributes="*" css:content="body" css:theme="body" />
+        See ``theme.html`` for the page layout and placeholders, ``theme.css``
+        and ``bootstrap.css`` for the basic theme CSS (based on Twitter
+        Bootstrap), and ``ploneui.css``, which contains CSS stolen from Plone's
+        default Sunburst theme to style Plone-specific elements.
 
-  <!-- move global nav -->
-  <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="raw" />
+        -->
 
-  <!-- full-width breadcrumb -->
-  <replace css:content="#viewlet-above-content" css:theme="#above-content" />
+    <rules css:if-content="#visual-portal-wrapper">
 
-  <!-- Central column -->
-  <replace css:theme="#content-container" method="raw">
+        <merge attributes="class" css:content="body" css:theme="body"/>
+        <theme css:if-content=".template-pagina-inicial" href="index.html" />
+        <theme css:not-if-content=".template-pagina-inicial" href="pages/interna.html" />
 
-    <xsl:variable name="central">
-      <xsl:if test="//aside[@id='portal-column-one'] and //aside[@id='portal-column-two']">col-xs-12 col-sm-6</xsl:if>
-      <xsl:if test="//aside[@id='portal-column-two'] and not(//aside[@id='portal-column-one'])">col-xs-12 col-sm-9</xsl:if>
-      <xsl:if test="//aside[@id='portal-column-one'] and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-9</xsl:if>
-      <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
-    </xsl:variable>
+        <!-- Head elements -->
+        <!-- Head: title -->
+        <replace content="/html/head/title[1]" theme="/html/head/title" />
+        <!-- Base tag -->
+        <replace content="/html/head/base" theme="/html/head/base" />
+        <!-- meta tag -->
+        <append content="/html/head/meta" theme="/html/head/meta" />
+        <!-- Pull in Plone CSS -->
+        <replace content="/html/head/link | /html/head/style " theme='//*[@id="css_link_plone"]'/>
+        <!-- Pull in Plone JS -->
+        <replace content="/html/head/script" theme='//*[@id="js_plone"]'/>
 
-    <div class="{$central}">
-      <!-- <p class="pull-right visible-xs">
-        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-      </p> -->
-      <div class="row">
-        <div class="col-xs-12 col-sm-12">
-          <xsl:apply-templates css:select="#content" />
-        </div>
-      </div>
-      <footer class="row">
-        <div class="col-xs-12 col-sm-12">
-          <xsl:copy-of css:select="#viewlet-below-content" />
-        </div>
-      </footer>
-    </div>
-  </replace>
+        <!-- Logo -->
+        <copy attributes="href" css:theme=".brand-logo" css:content="#portal-logo" />
+        <replace css:theme="#info_atualizacao" css:content="#viewlet-below-content-title" />
+        
+        <!-- Tabs -->
+        <!-- <replace css:theme-children="#tabs" css:content-children="#portal-globalnav" /> -->
 
-  <!-- Alert message -->
-  <replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage" />
+        <!-- Personal tools -->
+        <!-- <replace css:theme="#account-info" css:content="#portal-personaltools" /> -->
 
-  <!-- Left column -->
-  <rules css:if-content="#portal-column-one">
-    <replace css:theme="#column1-container">
-        <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas">
-          <aside id="portal-column-one">
-              <xsl:copy-of css:select="#portal-column-one > *" />
-          </aside>
-        </div>
-    </replace>
-  </rules>
+        <!-- Search -->
+        <copy attributes="action" css:theme="#busca_home" css:content="#portal-searchbox form" />
 
-  <!-- Right column -->
-  <rules css:if-content="#portal-column-two">
-    <replace css:theme="#column2-container">
-        <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas" role="complementary">
-          <aside id="portal-column-two">
-              <xsl:copy-of css:select="#portal-column-two > *" />
-          </aside>
-        </div>
-    </replace>
-  </rules>
+        <copy attributes="name" css:theme="#searchbox .search-query" css:content="#portal-searchbox form .searchField" />
 
-  <!-- Content header -->
-  <replace css:theme="#portal-top" css:content-children="#portal-top" />
+        <!-- Edit bar -->
+        <!-- <before css:theme-children="#content" css:content="#edit-bar" /> -->
 
-  <!-- Footer -->
-  <replace css:theme-children="#portal-footer" css:content-children="#portal-footer-wrapper" />
+        <!-- Portal messages -->
 
-  <!-- toolbar -->
-  <replace css:theme="#portal-toolbar" css:content-children="#edit-bar" css:if-not-content=".ajax_load" css:if-content=".userrole-authenticated" />
-  <replace css:theme="#anonymous-actions" css:content-children="#portal-personaltools-wrapper" css:if-not-content=".ajax_load" css:if-content=".userrole-anonymous" />
+        <!-- Main columns -->
+        <replace css:content-children="#portal-columns" css:theme-children="#main_content" />
+        <!-- <replace css:content-children="#portal-column-one" css:theme-children="#left-column" />
+        <replace css:content-children="#portal-column-two" css:theme-children="#right-column" /> -->
+        <replace css:content-children="#feedback_form" css:theme-children="#feedback_form" />
+        <!-- Footer -->
+      <!--   <replace css:theme-children="#footer" css:content-children="#portal-footer" />
+        <after css:theme-children="#footer" css:content="#portal-siteactions" /> -->
+        <rules css:if-content=".template-atct_edit">
+            <drop css:theme="#js_material"/>
+        </rules>
+    </rules>
 
 </rules>

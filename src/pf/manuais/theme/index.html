@@ -1,62 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Plone Theme</title>
-    <link rel="shortcut icon" type="image/x-icon"
-          href="barceloneta-favicon.ico" />
-    <link rel="apple-touch-icon"
-          href="barceloneta-apple-touch-icon.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="barceloneta-apple-touch-icon-144x144-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="barceloneta-apple-touch-icon-114x114-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="barceloneta-apple-touch-icon-72x72-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="57x57"
-          href="barceloneta-apple-touch-icon-57x57-precomposed.png" />
-    <link rel="apple-touch-icon-precomposed"
-          href="barceloneta-apple-touch-icon-precomposed.png" />
-  </head>
-  <body>
-    <section id="portal-toolbar">
-    </section>
-    <div class="outer-wrapper">
-      <header id="content-header" role="banner">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
+
+    <!-- Style CSS  -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SIPROQUIM2</title>
+
+    <link id="css_link_plone" />
+    <style type="text/css">
+        select{display: block;}
+        #content {
+            font-size: 100%;
+        }
+    </style>
+    <link id="js_plone" />
+    <script id="js_material"type="text/javascript" src="./js/materialize.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav>
+        <div class="nav-wrapper black">
+            <a href="#" class="brand-logo"><strong>Guia</strong> Siproquim 2</a>
+        </div>
+    </nav>
+
+    <!-- Header Home Busca -->
+    <div class="row background-busca">
+        <div class="box_header">
+            <div>
+                <h4 class="header-titulo">Bem vindo ao Guia Siproquim 2</h4>
+            </div>
+            <!-- Input Busca -->
+            <div class="box_busca_home">
+                <form class="Search box-form-busca-index" id="busca_home">
+
+                    <input placeholder="O que você procura?" name="SearchableText" id="busca_home_input" />
+
+                    <input value="search" class="material-icons searchButton_home" type="submit">
+                </form>
+            </div>
+            <div class="txt_home">
+                    <p>Você também pode escolher um dos tópicos abaixo para encontrar respostas sobre o sistema e receber instruções passo a passo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="main_content" class="row">
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="footer_geral">
         <div class="container">
-          <header id="portal-top">
-          </header>
-          <div id="anonymous-actions">
-          </div>
-        </div>
-      </header>
-      <div id="mainnavigation-wrapper">
-        <div id="mainnavigation">
-        </div>
-      </div>
-      <div id="above-content-wrapper">
-          <div id="above-content">
-          </div>
-      </div>
-      <div class="container">
+            <div class="row linha"></div>
 
-        <!-- DELETE ME: -->
-        <h1 class="custom-theme-marker">Custom Plone theme based on Baceloneta</h1>
+            <div>
+                <h2 class="subtitulo-duvidas">Ainda não encontrou o que precisa? </h2>
+            </div>
+            <div class="container box-container">
+                <div class="row box-duvidas box-duvidas-left">
+                    <i class="medium material-icons icon-duvidas">playlist_add</i>
+                    <p class="texto-duvidas">
+                        Caso não encontre o que precisa neste guia, acesse as
+                        <a href="http://www.pf.gov.br/servicos-pf/produtos-quimicos">dúvidas frequentes</a> no portal da Polícia Federal.
+                    </p>
+                </div>
 
-        <div class="row">
-          <aside id="global_statusmessage"></aside>
+                <div class="row box-duvidas box-duvidas-right">
+                    <i class="medium material-icons icon-duvidas">mail_outline</i>
+                    <p class="texto-duvidas">Caso ainda possua dúvidas, você pode
+                        <a href="#">entrar em contato</a> com a Divisão de Controle de Produtos Químicos.</p>
+                </div>
+            </div>
         </div>
-        <main id="main-container" class="row row-offcanvas row-offcanvas-right" role="main">
-          <div id="column1-container">
-          </div>
-          <div id="content-container">
-          </div>
-          <div id="column2-container">
-          </div>
-        </main><!--/row-->
-      </div><!--/container-->
-    </div> <!--/outer-wrapper -->
-    <footer id="portal-footer-wrapper" role="contentinfo">
-      <div class="container" id="portal-footer"></div>
-    </footer>
-  </body>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer col 12" style="clear: both;"></div>
+    <style type="text/css">
+
+    #content a:hover,
+    dl.portlet a:hover {
+        color: #263239 !important; /* This one gets an !important because it should always activate in the content area, even when state coloring is active */
+    }
+    </style>
+</body>
+
 </html>
