@@ -582,7 +582,7 @@ margin: 0 auto;
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans',!important;
     font-weight: 600 !important;
-    color: #263239 !important;
+    color: #474747 !important;
 }
 
 .box_feedbak,
@@ -605,6 +605,7 @@ h1, h2, h3, h4, h5, h6 {
     background: url(../assets/seta_folder.png) no-repeat right center;
     width: 981px;
     color: #384750 !important;
+    line-height: 1.67;
 }
 .template-folder_summary_view .tileItem:hover{
     border: 1px solid #2196F3;
