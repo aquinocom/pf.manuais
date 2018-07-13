@@ -196,15 +196,13 @@ textarea {
 }
 
 .footer {
-    width: full;
-    height: 40px;
     background-color: #263239;
     border: solid 1px #979797;
     margin-bottom: 0px;
 }
 
 .font {
-    font-style: OpenSans;
+    font-style: 'Open Sans', sans-serif !important;
     font-size: 18px;
     color: #384750;
 }
@@ -756,4 +754,23 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
 
 .barranav{
     height: 72px !important
+}
+
+.pf_topo{
+    color: #F5a623;
+    font-size: 16px;
+    margin-top: -2px;
+    float: left;
+    font-weight: 600;
+}
+.logo_footer_pf{
+    color: #fff;
+    text-align: right;
+    margin: 18px 82px 25px 1px;
+    font-size: 27px;
+    font-weight: bold;
+}
+.logo_footer_pf img{
+    height: 48px;
+    margin-bottom: -8px;
 }
