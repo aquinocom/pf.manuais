@@ -12,19 +12,19 @@
 </style>
 
 <div class="box_full">
-    
+
     <div metal:use-macro="context/portlet_menu_pagina_inicial/macros/portlet"></div>
 
-    <div class="box_lista_folders" 
+    <div class="box_lista_folders"
          tal:define="folders view/getFolders;
                      topicos_populares view/getTopicosPopulares">
         <div>
             <div id="topicos-populares">
                 <h1 class="subtitulo">Tópicos populares</h1>
-               
+
                 <div class="col s4 topicos">
                         <ul class="nav_subfolders">
-                            <li tal:repeat="item python: topicos_populares[0:5]">
+                            <li tal:repeat="item python: topicos_populares[0:5]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
                                    tal:attributes="href item/getURL">
                                     <span tal:replace="item/Title">link subnivel</span>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col s4 topicos">
                         <ul class="nav_subfolders">
-                            <li tal:repeat="item python: topicos_populares[5:10]">
+                            <li tal:repeat="item python: topicos_populares[5:10]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
                                    tal:attributes="href item/getURL">
                                     <span tal:replace="item/Title">link subnivel</span>
@@ -53,7 +53,7 @@
 
                     <div class="col s4 topicos">
                         <ul class="nav_subfolders">
-                            <li tal:repeat="item python: lista[0:5]">
+                            <li tal:repeat="item python: lista[0:5]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
                                    tal:attributes="href item/getURL">
                                     <span tal:replace="item/Title">link subnivel</span>
@@ -63,7 +63,7 @@
                     </div>
                     <div class="col s4 topicos">
                         <ul class="nav_subfolders">
-                            <li tal:repeat="item python: lista[5:10]">
+                            <li tal:repeat="item python: lista[5:10]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
                                    tal:attributes="href item/getURL">
                                     <span tal:replace="item/Title">link subnivel</span>
