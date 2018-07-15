@@ -4,14 +4,21 @@
 
         <tal:block tal:define="folders view/getFolders">
             <ul class="menu_portlet">
-                <li class="item_menu_portlet">
-                    <a href="#topicos-populares">Tópicos populares</a>
+                <li>
+                    <a href="#topicos-populares">
+                        <div class="item_menu_portlet">
+                            Tópicos populares
+                        </div>
+                    </a>
                 </li>
                 <tal:block tal:repeat="item folders">
-                    <li class="item_menu_portlet">
-                        <a href="#"
-                           tal:attributes="href string: #${item/id}"
-                           tal:content="item/Title">Mudar tema visual</a>
+                    <li>
+                        <a href="#" tal:attributes="href string: #${item/id}">
+                            <div class="item_menu_portlet"
+                                  tal:content="item/Title">
+                                Mudar tema visual
+                            </div>
+                        </a>
                     </li>
                 </tal:block>
             </ul>

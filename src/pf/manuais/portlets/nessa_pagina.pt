@@ -5,10 +5,14 @@
 	    <h6 class="subtitulo_portlet">NESTA PÁGINA</h6>
 
 	    <ul class="menu_portlet">
-	        <li class="item_menu_portlet" tal:repeat="item ancoras">
+	        <li tal:repeat="item ancoras">
 	            <a href="#registrar-conta" 
-	               tal:attributes="href python: '#'+item['id']"
-	               tal:content="structure python:item['nome']">Registrar conta</a>
+	               tal:attributes="href python: '#'+item['id']">
+	           		<div class="item_menu_portlet" 
+	           		     tal:content="structure python:item['nome']">
+	           			Registrar conta
+	           		</div>
+	           	</a>
 	        </li>
 	    </ul>
     </div>

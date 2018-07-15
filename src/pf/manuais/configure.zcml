@@ -20,7 +20,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Plone Theme: Tema Manuais PF"
+      title="Tema Manuais PF"
       directory="profiles/default"
       description="Installs the Plone theme package pf.manuais."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -29,7 +29,7 @@
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="Uninstall: Plone Theme: Tema Manuais PF"
+      title="Uninstall: Tema Manuais PF"
       directory="profiles/uninstall"
       description="Uninstalls the Plone theme package pf.manuais."
       provides="Products.GenericSetup.interfaces.EXTENSION"
