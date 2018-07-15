@@ -840,9 +840,3 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
        margin-top: -37px;
     }
 }
-@media only screen and (max-width: 900px) {
-    .portaltype-document #portal-column-two,
-    .menu_flutua, .box_portlet_pagina{display: none !important;}
-
-}
-
