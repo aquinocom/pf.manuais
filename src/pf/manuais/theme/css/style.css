@@ -793,7 +793,6 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
 
 @media only screen and (max-width: 800px) {
     .portaltype-document #portal-column-two,
-
     .menu_flutua, .box_portlet_pagina{display: none !important;}
 
     .col_topicos_left{ float: none;}
@@ -821,11 +820,28 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
     }
     .box-duvidas {
         width: 100% !important;
+        height: auto;
+    }
+    .texto-duvidas {
+        padding-top: 20px;
+        padding-left: 84px;
+        padding-right: 12px;
+        text-align: left;
+        padding-bottom: 20px;
+    }
+    .icon-duvidas {
+        padding-top: 30px;
+        padding-left: 0;
+        width: 80px;
+        height: 31px;
+
+    }
+    .searchButton_home {
+       margin-top: -37px;
     }
 }
 @media only screen and (max-width: 900px) {
     .portaltype-document #portal-column-two,
-
     .menu_flutua, .box_portlet_pagina{display: none !important;}
 
 }
