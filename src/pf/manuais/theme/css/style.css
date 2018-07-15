@@ -803,6 +803,25 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
         position: relative !important;
         margin-left: 20px;
     }
+    .box_header{width:100%}
+    .header-titulo{
+        line-height: 1.4em;
+    }
+    .background-busca {
+        height: inherit !important;
+    }
+    .txt_home {
+        width: 100%;
+    }
+    .box_busca_home {
+        width: 100%;
+    }
+    .box-container {
+        width: 100% !important;
+    }
+    .box-duvidas {
+        width: 100% !important;
+    }
 }
 @media only screen and (max-width: 900px) {
     .portaltype-document #portal-column-two,
