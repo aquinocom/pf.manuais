@@ -31,9 +31,8 @@
 .brand-logo {
     color: #fff !important;
     font-size: 20px !important;
-    margin-left: 89px;
-    left: 0 !important;
     font-weight: 300;
+    left: 20px;
 }
 
 .brand-logo strong{
@@ -500,6 +499,7 @@ margin: 0 auto;
     float: left;
 }
 .box_full{}
+
 .box_portlet_pagina{
     width: 315px;
     /*position: fixed;*/
@@ -709,6 +709,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 4em !important;
     border-left: none !important;
     clear: both !important;
+    display: block;
 }
 
 .dica {
@@ -716,6 +717,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 4em;
     border-left: none;
     clear: both;
+    display: block;
 }
 
 #content .atencao, .portletStaticText .atencao {
@@ -723,6 +725,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 4em;
     border-left: none;
     clear: both;
+    display: block;
 }
 
 .image-inline {
@@ -774,3 +777,37 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
     height: 48px;
     margin-bottom: -8px;
 }
+
+.col_topicos{width: 100%;}
+
+.col_topicos_left, .col_topicos_right{
+    width: 35%;
+}
+
+.col_topicos_left{
+    float: left;
+}
+.col_topicos_right{
+    float: right;
+}
+
+@media only screen and (max-width: 800px) {
+    .portaltype-document #portal-column-two,
+
+    .menu_flutua, .box_portlet_pagina{display: none !important;}
+
+    .col_topicos_left{ float: none;}
+    .col_topicos_right{float: none;}
+    .brand-logo{
+        display: block !important;
+        position: relative !important;
+        margin-left: 20px;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .portaltype-document #portal-column-two,
+
+    .menu_flutua, .box_portlet_pagina{display: none !important;}
+
+}
+

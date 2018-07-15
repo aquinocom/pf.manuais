@@ -8,13 +8,13 @@ $(document).ready(function () {
     if ($(window).scrollTop() > 200)
       $cache.css({
         'position': 'fixed',
-    'top': '10%'
+        'top': '20px'
 
       });
     else
       $cache.css({
         'position': 'fixed',
-        'top': '40%'
+        'top': '400px'
       });
   }
   $(window).scroll(fixDivIndex);

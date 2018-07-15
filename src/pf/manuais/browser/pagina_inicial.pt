@@ -48,10 +48,11 @@
             <tal:block tal:repeat="item folders">
                 <div tal:define="caminho python:item.getPath();
                                  lista python: view.getFolderItens(caminho)"
-                     tal:attributes="id item/id">
+                     tal:attributes="id item/id"
+                     class="col_topicos">
                     <h1 class="subtitulo" tal:content="item/Title">Subnivel</h1>
 
-                    <div class="col s4 topicos">
+                    <div class="col_topicos_right">
                         <ul class="nav_subfolders">
                             <li tal:repeat="item python: lista[0:5]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
@@ -61,7 +62,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="col s4 topicos">
+                    <div class="col_topicos_left">
                         <ul class="nav_subfolders">
                             <li tal:repeat="item python: lista[5:10]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
