@@ -8,7 +8,7 @@ $(document).ready(function () {
     if ($(window).scrollTop() > 200)
       $cache.css({
         'position': 'fixed',
-        'top': '20px'
+        'top': '60px'
 
       });
     else
@@ -27,13 +27,13 @@ $(document).ready(function () {
     if ($(window).scrollTop() > 200)
       $cache.css({
         'position': 'fixed',
-        'top': '10%'
+        'top': '90px'
 
       });
     else
       $cache.css({
         'position': 'fixed',
-        'top': '15%'
+        'top': '90px'
       });
   }
   $(window).scroll(fixDiv);

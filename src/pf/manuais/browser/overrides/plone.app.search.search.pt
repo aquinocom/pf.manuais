@@ -75,19 +75,6 @@
                     </strong>
                 </h1>
 
-                <p id="rss-subscription" i18n:domain="plone"
-                   tal:condition="context/@@syndication-util/search_rss_enabled">
-                      <img src="" alt="RSS"
-                           tal:attributes="src string:${portal_url}/rss.png"/>
-                    <a href=""
-                       class="link-feed"
-                       tal:define="here_url context/@@plone_context_state/object_url"
-                       tal:attributes="href string:$here_url/search_rss?${request/QUERY_STRING}">
-                        <span i18n:translate="title_subscribe_rss_feed">
-                          Subscribe to an always-updated RSS feed.
-                        </span>
-                    </a>
-                </p>
             </div>
             <div class="visualClear"><!-- --></div>
             <div id="search-results-wrapper"

@@ -740,6 +740,9 @@ li .image-inline  {
 #content .documentDescription{
     margin-bottom: 20px !important;
     font-weight: normal !important;
+    color: #384750 !important;
+    margin-left: 0;
+    font: inherit !important;
 }
 
 .tileItem .documentByLine{
@@ -789,6 +792,27 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
 }
 .col_topicos_right{
     float: right;
+}
+.portalMessage dt{display: none;}
+
+.header_fix{
+    position: fixed;
+    /*margin-top: -90px;*/
+    z-index: 1;
+}
+.content_main{
+    margin-top: 100px;
+}
+.content_home_main{
+    margin-top: 72px;
+}
+
+#portal-breadcrumbs a {
+    color: #4a90e2 !important;
+}
+.breadcrumb:last-child {
+    font-weight: 600;
+    color: #4a90e2;
 }
 
 @media only screen and (max-width: 800px) {

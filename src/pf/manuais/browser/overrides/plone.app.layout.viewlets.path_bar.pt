@@ -23,7 +23,7 @@
             </span>
             <span id="breadcrumbs-current"
                   tal:condition="is_last"
-                  tal:content="title" class="breadcrumb blue-text" style="font-weight: bold">crumb</span>
+                  tal:content="title" class="breadcrumb">crumb</span>
          </tal:item>
     </span>
 
