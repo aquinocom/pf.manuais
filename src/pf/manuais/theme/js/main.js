@@ -5,7 +5,7 @@ $(document).ready(function () {
  /* HOME PAGE   */
   function fixDivIndex() {
     var $cache = $('.menu_flutua');
-    if ($(window).scrollTop() > 200)
+    if ($(window).scrollTop() > 350)
       $cache.css({
         'position': 'fixed',
         'top': '60px'

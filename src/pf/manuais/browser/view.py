@@ -60,7 +60,18 @@ class PaginaInicialView(BrowserView):
                           exclude_from_nav=False
                           )
         return folders
-
+    @memoize
+    def getFolders_interna(self):
+        """Retorna o resultado de uma consulta no catalog.
+        """
+        catalog = getToolByName(self, 'portal_catalog')
+        path = '/'.join(self.context.getPhysicalPath())
+        folders = catalog(object_provides=IATFolder.__identifier__,
+                          path={'query': path, 'depth': 0},
+                          sort_on='getObjPositionInParent',
+                          exclude_from_nav=False
+                          )
+        return folders
     @memoize
     def getFolderItens(self, path):
         """Retorna o resultado de uma consulta no catalog.
@@ -73,7 +84,18 @@ class PaginaInicialView(BrowserView):
                           exclude_from_nav=False
                           )
         return folders
-
+    @memoize
+    def getFolderItensInterna(self, path):
+        """Retorna o resultado de uma consulta no catalog.
+        """
+        # import pdb; pdb.set_trace()
+        catalog = getToolByName(self, 'portal_catalog')
+        folders = catalog(object_provides=[IATFolder.__identifier__, IATDocument.__identifier__],
+                          path={'query': path, 'depth': 1},
+                          sort_on='getObjPositionInParent',
+                          exclude_from_nav=False
+                          )
+        return folders
     def getAncorasPortlet(self):
 
         if self.context.Type() == 'Page':

@@ -28,6 +28,14 @@
       layer="pf.manuais.interfaces.IPfManuaisLayer"
       template="pagina_inicial.pt"
     />
+  <browser:page
+      name="visao_pasta"
+      for="*"
+      class=".view.PaginaInicialView"
+      permission="zope2.View"
+      layer="pf.manuais.interfaces.IPfManuaisLayer"
+      template="visao_pasta.pt"
+    />
 
   <!-- Portlet -->
   <browser:page
