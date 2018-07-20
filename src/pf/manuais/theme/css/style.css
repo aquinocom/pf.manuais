@@ -796,15 +796,14 @@ input:not([type]), input[type="text"]:not(.browser-default), input[type="passwor
 .portalMessage dt{display: none;}
 
 .header_fix{
-    position: fixed;
-    /*margin-top: -90px;*/
+
     z-index: 1;
 }
 .content_main{
-    margin-top: 100px;
+
 }
 .content_home_main{
-    margin-top: 72px;
+
 }
 
 #portal-breadcrumbs a {
