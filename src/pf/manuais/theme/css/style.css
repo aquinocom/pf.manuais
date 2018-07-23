@@ -494,9 +494,14 @@ margin: 0 auto;
 }
 
 
+
 .box_lista_folders{
     width: 65%;
     float: left;
+}
+
+.visao_pasta .box_lista_folders{
+    float:  none;
 }
 .box_full{}
 
