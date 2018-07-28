@@ -76,4 +76,13 @@
       template="feedbacksview.pt"
   />
 
+  <!-- The logo -->
+    <browser:viewlet
+        name="pf.navegacao"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".view.PFNavegacaoViewlet"
+        permission="zope2.View"
+        template="pf_navegacao.pt"
+        />
+
 </configure>

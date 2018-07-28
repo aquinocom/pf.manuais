@@ -15,6 +15,8 @@ from plone.i18n.normalizer.interfaces import IIDNormalizer
 # from DateTime import DateTime
 # from plone import api
 from Products.CMFPlone.utils import _createObjectByType
+from plone.app.layout.viewlets import ViewletBase
+from zope.site.hooks import getSite
 
 
 class PaginaInicialView(BrowserView):
@@ -45,7 +47,10 @@ class PaginaInicialView(BrowserView):
 
         catalog = getToolByName(self, 'portal_catalog')
         categoria = "Tópicos populares"
-        folders = catalog(Subject=categoria, exclude_from_nav=False)
+        path = '/'.join(self.context.getPhysicalPath())
+        folders = catalog(path={'query': path},
+                          Subject=categoria, 
+                          exclude_from_nav=False)
         return folders
 
     @memoize
@@ -285,3 +290,60 @@ class FeedbackAdminView(BrowserView):
                    'caminho': item.Description,
                    'link': item.getURL()}
         return dic
+
+
+class PFNavegacaoViewlet(ViewletBase):
+
+    def update(self):
+        super(PFNavegacaoViewlet, self).update()
+
+        portal = self.portal_state.portal()
+        bprops = portal.restrictedTraverse('base_properties', None)
+        if bprops is not None:
+            logoName = bprops.logoName
+        else:
+            logoName = 'logo.jpg'
+
+        logoTitle = self.portal_state.portal_title()
+        self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle)
+        self.navigation_root_title = self.portal_state.navigation_root_title()
+        
+    def getNomeManual(self):
+        # import pdb; pdb.set_trace()
+
+        portal = getSite()
+        try:
+            path_manual = self.context.getPhysicalPath()[2]
+        except Exception:
+            path_manual = self.context.getPhysicalPath()[1]
+        
+        obj_manual = getattr(self.context, path_manual)
+
+        return obj_manual.Title()
+
+    def getUrlManual(self):
+        portal = getSite()
+        try:
+            path_manual = self.context.getPhysicalPath()[2]
+        except Exception:
+            path_manual = self.context.getPhysicalPath()[1]
+        
+        obj_manual = getattr(self.context, path_manual)
+        # import pdb; pdb.set_trace()
+        return obj_manual.absolute_url()
+    
+    def getPathManual(self):
+        portal = getSite()
+        try:
+            path_manual = self.context.getPhysicalPath()[2]
+        except Exception:
+            path_manual = self.context.getPhysicalPath()[1]
+        
+        obj_manual = getattr(self.context, path_manual)
+        path_manual_busca = '/'.join(obj_manual.getPhysicalPath())
+        # import pdb; pdb.set_trace()
+        return path_manual_busca
+      
+
+ 
+        

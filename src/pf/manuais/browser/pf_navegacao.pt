@@ -1,0 +1,6 @@
+<p id="pf_nome_manual" tal:content="view/getNomeManual">Bem vindo ao Guia Siproquim 2</p>
+<a id="pf_url_manual" tal:attributes="href view/getUrlManual"
+   tal:content="view/getUrlManual">Bem vindo ao Guia Siproquim 2</a>
+<br>
+<a id="pf_path_manual" tal:attributes="href view/getPathManual"
+                       tal:content="view/getPathManual"></a>
