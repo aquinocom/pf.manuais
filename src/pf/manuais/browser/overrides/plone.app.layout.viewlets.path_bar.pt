@@ -2,7 +2,7 @@
      i18n:domain="plone"
      tal:define="breadcrumbs view/breadcrumbs;
                  is_rtl view/is_rtl">
-   
+   <span class="breadcrumb blue-text">Guia </span>
     <span tal:repeat="crumb breadcrumbs"
           tal:attributes="dir python:is_rtl and 'rtl' or 'ltr';
                           id string:breadcrumbs-${repeat/crumb/number}">
