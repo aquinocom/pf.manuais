@@ -34,7 +34,8 @@
                       first_call not:request/advanced_search|nothing;
                       st python:request.get('SearchableText', '');
                       DateTime python:modules['DateTime'].DateTime;
-                      navigation_root_url view/navroot_url;"> 
+                      navigation_root_url view/navroot_url;"
+          tal:attributes="action string: ${context/absolute_url}/@@search"> 
 
         <input type="hidden" name="advanced_search" value="False" />
         <input type="hidden" name="sort_on" value="" />
