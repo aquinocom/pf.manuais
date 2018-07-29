@@ -43,7 +43,7 @@
 
         <copy attributes="name" css:theme="#searchbox .search-query" css:content="#portal-searchbox form .searchField" />
         
-        <replace css:theme="#nome_manual" css:content-children="#breadcrumbs-1 .breadcrumb" />
+        <replace css:theme="#nome_manual" css:content-children="#pf_nome_manual" />
 
         <copy attributes="value" css:theme="#searchbox_currentfolder_only" css:content="#searchbox_currentfolder_only" />
 

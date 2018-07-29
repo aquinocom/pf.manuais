@@ -307,43 +307,27 @@ class PFNavegacaoViewlet(ViewletBase):
         logoTitle = self.portal_state.portal_title()
         self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle)
         self.navigation_root_title = self.portal_state.navigation_root_title()
-        
-    def getNomeManual(self):
-        # import pdb; pdb.set_trace()
-
-        portal = getSite()
-        try:
-            path_manual = self.context.getPhysicalPath()[2]
-        except Exception:
-            path_manual = self.context.getPhysicalPath()[1]
-        
-        obj_manual = getattr(self.context, path_manual)
-
-        return obj_manual.Title()
-
-    def getUrlManual(self):
-        portal = getSite()
-        try:
-            path_manual = self.context.getPhysicalPath()[2]
-        except Exception:
-            path_manual = self.context.getPhysicalPath()[1]
-        
-        obj_manual = getattr(self.context, path_manual)
-        # import pdb; pdb.set_trace()
-        return obj_manual.absolute_url()
     
-    def getPathManual(self):
+
+
+    def getDadosManual(self):
+        # import pdb; pdb.set_trace()
         portal = getSite()
         try:
             path_manual = self.context.getPhysicalPath()[2]
-        except Exception:
+            texto_guia = '<strong>Guia </strong>'
+        except:
             path_manual = self.context.getPhysicalPath()[1]
+            texto_guia = ''
         
         obj_manual = getattr(self.context, path_manual)
-        path_manual_busca = '/'.join(obj_manual.getPhysicalPath())
-        # import pdb; pdb.set_trace()
-        return path_manual_busca
-      
+
+        dados_manual = {'titulo': texto_guia + obj_manual.Title(),
+                        'link': obj_manual.absolute_url(),
+                        'path': '/'.join(obj_manual.getPhysicalPath()) }
+
+        return dados_manual
+
 
  
         
