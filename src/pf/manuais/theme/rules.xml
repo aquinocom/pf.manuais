@@ -51,6 +51,7 @@
         <replace css:content-children="#portal-columns" css:theme-children="#main_content" />
 
         <replace css:content-children="#feedback_form" css:theme-children="#feedback_form" />
+        <replace css:content-children="#encontrar_home" css:theme-children="#encontrar_home" />
 
         <rules css:if-content=".template-atct_edit">
             <drop css:theme="#js_material"/>

@@ -29,3 +29,21 @@
         </div>
     </div>
 </div>
+
+
+<div class="container box-container" id="encontrar_home">
+    <div class="row box-duvidas box-duvidas-left">
+        <i class="medium material-icons icon-duvidas">playlist_add</i>
+        <p class="texto-duvidas">
+            Caso não encontre o que precisa neste guia, acesse as
+            <a href="duvidas-frequentes" tal:attributes="href string:${context/absolute_url}/duvidas-frequentes">dúvidas frequentes</a> no portal da Polícia Federal.
+        </p>
+    </div>
+
+    <div class="row box-duvidas box-duvidas-right">
+        <i class="medium material-icons icon-duvidas">mail_outline</i>
+        <p class="texto-duvidas">Caso ainda possua dúvidas, você pode
+            <a href="http://www.pf.gov.br/servicos-pf/produtos-quimicos/contatos-da-dcpq"
+               tal:attributes="href string:${context/absolute_url}/contato">entrar em contato</a>.</p>
+    </div>
+</div>
