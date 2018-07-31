@@ -1,0 +1,6 @@
+<p id="pf_nome_manual" tal:content="structure python: view.getDadosManual()['titulo']">Bem vindo ao Guia Siproquim 2</p>
+<a id="pf_url_manual" tal:attributes="href python: view.getDadosManual()['link']"
+   tal:content="python: view.getDadosManual()['link']">Bem vindo ao Guia Siproquim 2</a>
+<br>
+<a id="pf_path_manual" tal:attributes="href python: view.getDadosManual()['path']"
+                       tal:content="python: view.getDadosManual()['path']"></a>

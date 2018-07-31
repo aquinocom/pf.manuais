@@ -38,7 +38,8 @@
         <div class="nav-wrapper black">
             <a href="#" class="brand-logo">
                     <span class="pf_topo">PF/</span>
-                    <strong>Guia</strong> Siproquim 2
+                    <!-- <strong>Guia</strong>  -->
+                    <span id="nome_manual">nome manual</span>
             </a>
         </div>
     </nav>
@@ -47,7 +48,8 @@
     <div class="row background-busca content_home_main">
         <div class="box_header">
             <div>
-                <h4 class="header-titulo">Bem vindo ao Guia Siproquim 2</h4>
+                <h4 class="header-titulo">
+                    Bem vindo ao <span id="nome_manual">nome manual</span></h4>
             </div>
             <!-- Input Busca -->
             <div class="box_busca_home">
@@ -55,7 +57,8 @@
 
                     <input placeholder="O que você procura?" name="SearchableText" id="busca_home_input" />
 
-                    <input value="search" class="material-icons searchButton_home" type="submit">
+                    <input value="search" class="material-icons searchButton_home" type="submit" />
+                    <input id="searchbox_currentfolder_only" name="path" value="/" type="hidden">
                 </form>
             </div>
             <div class="txt_home">
@@ -76,12 +79,12 @@
             <div>
                 <h2 class="subtitulo-duvidas">Ainda não encontrou o que precisa? </h2>
             </div>
-            <div class="container box-container">
+            <div class="container box-container" id="encontrar_home">
                 <div class="row box-duvidas box-duvidas-left">
                     <i class="medium material-icons icon-duvidas">playlist_add</i>
                     <p class="texto-duvidas">
                         Caso não encontre o que precisa neste guia, acesse as
-                        <a href="http://www.pf.gov.br/servicos-pf/produtos-quimicos/duvidas-frequentes">dúvidas frequentes</a> no portal da Polícia Federal.
+                        <a href="../duvidas-frequentes">dúvidas frequentes</a> no portal da Polícia Federal.
                     </p>
                 </div>
 
