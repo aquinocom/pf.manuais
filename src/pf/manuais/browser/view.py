@@ -22,8 +22,6 @@ from zope.site.hooks import getSite
 class PaginaInicialView(BrowserView):
     """ view list news
     """
-
-    # __call__ = ViewPageTemplateFile('templates/')
     def __init__(self, context, request):
         self.context = context
         self.request = request
@@ -81,7 +79,6 @@ class PaginaInicialView(BrowserView):
     def getFolderItens(self, path):
         """Retorna o resultado de uma consulta no catalog.
         """
-        # import pdb; pdb.set_trace()
         catalog = getToolByName(self, 'portal_catalog')
         folders = catalog(object_provides=[IATFolder.__identifier__, IATDocument.__identifier__],
                           path={'query': path, 'depth': 1},
@@ -93,7 +90,6 @@ class PaginaInicialView(BrowserView):
     def getFolderItensInterna(self, path):
         """Retorna o resultado de uma consulta no catalog.
         """
-        # import pdb; pdb.set_trace()
         catalog = getToolByName(self, 'portal_catalog')
         folders = catalog(object_provides=[IATFolder.__identifier__, IATDocument.__identifier__],
                           path={'query': path, 'depth': 1},
@@ -185,11 +181,6 @@ class FeedbackAddForm(BrowserView):
         log = logging.getLogger('createFeedback:')
         folder_conteudo = 'Feedback Admin'
 
-        # try:
-        #     pasta_manual = self.context.getPhysicalPath()[2]
-        # except:
-        #     pasta_manual = self.context.id
-
         site = getSite()
         id_folder_manual = self.context.getPhysicalPath()[2]
 
@@ -206,14 +197,10 @@ class FeedbackAddForm(BrowserView):
             if obj:
                 obj.setTitle(folder_conteudo)
                 obj.setExcludeFromNav(True)
-                obj.setLayout('folder_listing')
+                obj.setLayout('feedbacksview')
                 obj.reindexObject()
 
         folderFeedback = getattr(folder_manual, id_folder)
-        # folderFeedback = getattr(site, pasta_manual)
-
-        # import pdb; pdb.set_trace()
-
         paginaContext = {'titulo': self.context.Title(),
                          'uid': self.context.UID(),
                          'caminho': '/'.join(self.context.getPhysicalPath()),
@@ -224,8 +211,6 @@ class FeedbackAddForm(BrowserView):
         zope_DT = DateTime(python_dt)
         data_feedback = zope_DT.strftime('%d/%m/%Y-%H:%M')
         data_milisecond = zope_DT.strftime('%s')
-
-        # import pdb; pdb.set_trace()
 
         titulo_content = 'Feedback ' + ' - ' + data_feedback + ' - ' + paginaContext['uid']
         id_content = 'feedback ' + data_feedback + '-' + data_milisecond
@@ -307,11 +292,8 @@ class PFNavegacaoViewlet(ViewletBase):
         logoTitle = self.portal_state.portal_title()
         self.logo_tag = portal.restrictedTraverse(logoName).tag(title=logoTitle, alt=logoTitle)
         self.navigation_root_title = self.portal_state.navigation_root_title()
-    
-
 
     def getDadosManual(self):
-        # import pdb; pdb.set_trace()
         portal = getSite()
         try:
             path_manual = self.context.getPhysicalPath()[2]
