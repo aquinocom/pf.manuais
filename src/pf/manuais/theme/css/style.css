@@ -737,7 +737,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 20px auto;
     max-width: 100%;
     box-shadow: 0 2px 6px 0 rgba(179, 179, 179, 0.5);
-    border: solid 0.2px #384750;
 }
 
 li .image-inline  {
