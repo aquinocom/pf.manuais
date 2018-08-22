@@ -81,6 +81,7 @@
         name="pf.navegacao"
         manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
         class=".view.PFNavegacaoViewlet"
+        layer="pf.manuais.interfaces.IPfManuaisLayer"
         permission="zope2.View"
         template="pf_navegacao.pt"
         />

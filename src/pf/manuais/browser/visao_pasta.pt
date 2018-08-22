@@ -9,12 +9,12 @@
     .footer_home{
         width: 77% !important;
     }
-    
+
 </style>
 
 <div class="box_full">
 
-    
+
 
     <div class="box_lista_folders"
          tal:define="folders view/getFolders_interna;
@@ -30,8 +30,10 @@
                     <h1 class="subtitulo" tal:content="item/Title">Subnivel</h1>
 
                     <div class="col_topicos_left">
-                        <ul class="nav_subfolders">
-                            <li tal:repeat="item python: lista[0:5]" style="margin-bottom: 20px !important;">
+                        <ul class="nav_subfolders" tal:define="itens python: len(lista);
+                                                               colunas python: itens / 2">
+
+                            <li tal:repeat="item python: lista[0: colunas]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
                                    tal:attributes="href item/getURL">
                                     <span tal:replace="item/Title">link subnivel</span>
@@ -40,8 +42,9 @@
                         </ul>
                     </div>
                     <div class="col_topicos_right">
-                        <ul class="nav_subfolders">
-                            <li tal:repeat="item python: lista[5:10]" style="margin-bottom: 20px !important;">
+                        <ul class="nav_subfolders" tal:define="itens python: len(lista);
+                                                               colunas python: itens / 2">
+                            <li tal:repeat="item python: lista[colunas:itens]" style="margin-bottom: 20px !important;">
                                 <a href="" class="hover-indice"
                                    tal:attributes="href item/getURL">
                                     <span tal:replace="item/Title">link subnivel</span>

@@ -16,7 +16,7 @@ from plone.i18n.normalizer.interfaces import IIDNormalizer
 # from plone import api
 from Products.CMFPlone.utils import _createObjectByType
 from plone.app.layout.viewlets import ViewletBase
-from zope.site.hooks import getSite
+# from zope.site.hooks import getSite
 
 
 class PaginaInicialView(BrowserView):
@@ -47,7 +47,7 @@ class PaginaInicialView(BrowserView):
         categoria = "Tópicos populares"
         path = '/'.join(self.context.getPhysicalPath())
         folders = catalog(path={'query': path},
-                          Subject=categoria, 
+                          Subject=categoria,
                           exclude_from_nav=False)
         return folders
 
@@ -63,6 +63,7 @@ class PaginaInicialView(BrowserView):
                           exclude_from_nav=False
                           )
         return folders
+
     @memoize
     def getFolders_interna(self):
         """Retorna o resultado de uma consulta no catalog.
@@ -75,6 +76,7 @@ class PaginaInicialView(BrowserView):
                           exclude_from_nav=False
                           )
         return folders
+
     @memoize
     def getFolderItens(self, path):
         """Retorna o resultado de uma consulta no catalog.
@@ -86,6 +88,7 @@ class PaginaInicialView(BrowserView):
                           exclude_from_nav=False
                           )
         return folders
+
     @memoize
     def getFolderItensInterna(self, path):
         """Retorna o resultado de uma consulta no catalog.
@@ -97,6 +100,7 @@ class PaginaInicialView(BrowserView):
                           exclude_from_nav=False
                           )
         return folders
+
     def getAncorasPortlet(self):
 
         if self.context.Type() == 'Page':
@@ -294,22 +298,22 @@ class PFNavegacaoViewlet(ViewletBase):
         self.navigation_root_title = self.portal_state.navigation_root_title()
 
     def getDadosManual(self):
-        portal = getSite()
+        # portal = getSite()
         try:
             path_manual = self.context.getPhysicalPath()[2]
             texto_guia = '<strong>Guia </strong>'
         except:
             path_manual = self.context.getPhysicalPath()[1]
             texto_guia = ''
-        
+
         obj_manual = getattr(self.context, path_manual)
 
         dados_manual = {'titulo': texto_guia + obj_manual.Title(),
                         'link': obj_manual.absolute_url(),
-                        'path': '/'.join(obj_manual.getPhysicalPath()) }
+                        'path': '/'.join(obj_manual.getPhysicalPath())}
 
         return dados_manual
 
 
- 
-        
+
+
